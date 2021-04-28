@@ -1,0 +1,3 @@
+---
+db_root_password: 'root'
+wp_ip_machine: '192.168.0.80'

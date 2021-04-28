@@ -1,0 +1,8 @@
+---
+- name: 'Instala pacotes de dependencia do sistema operacional'
+      apt:
+        name: '{{ item }}'
+        state: latest
+        update_cache: yes
+      become: yes
+      loop: ['apache2', 'php', 'php-mysql', 'libapache2-mod-php']

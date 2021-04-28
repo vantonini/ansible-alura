@@ -1,0 +1,35 @@
+---
+- hosts: database
+  roles:
+    - database
+- hosts: wordpress
+  roles:
+    - wordpress
+
+    # - name: Sets the root password
+    #   mysql_user:
+    #     name: root
+    #     host: 'localhost'
+    #     password: 'root'
+    #     priv: '*.*:ALL,GRANT'
+    #     state: present
+
+    # - name: copy .my.cnf file with root password credentials
+    #   template:
+    #     src: templates/.my.cnf
+    #     dest: /root/.my.cnf
+    #     owner: root
+    #     mode: 0600
+
+    # - name: 'Cria uma nova base de dados'
+    #   mysql_db:
+    #     pass: root
+    #     name: wordpress_db
+    #     state: present
+
+    # - name: 'Adicionar um usuario ao MySQL'
+    #   mysql_user:
+    #     name: wordpress_user
+    #     password: 12345
+    #     priv: 'wordpress_db.*:ALL'
+    #     state: present
